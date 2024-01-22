@@ -18,21 +18,6 @@ module.exports = {
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
   plugins: ['prettier', 'react-refresh', '@typescript-eslint'],
-  overrides: [
-    {
-      files: ['vite.config.ts'],
-      rules: {
-        'import/no-extraneous-dependencies': [
-          'error',
-          {
-            devDependencies: true,
-            optionalDependencies: true,
-            peerDependencies: true,
-          },
-        ],
-      },
-    },
-  ],
   rules: {
     'react/react-in-jsx-scope': 0,
     'import/extensions': 0,
@@ -45,6 +30,10 @@ module.exports = {
       {
         endOfLine: 'auto',
       },
+    ],
+    'import/no-extraneous-dependencies': [
+      'error',
+      { devDependencies: ['**/*.test.js', '**/*.spec.js'] },
     ],
   },
 };
