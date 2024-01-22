@@ -13,12 +13,18 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "esModuleInterop": true,
 
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/pages/*": ["./src/pages/*"],
+    },
   },
   "include": ["eslintrc.cjs", "src", "__test__/**/*.ts", "__test__/**/*.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }],
